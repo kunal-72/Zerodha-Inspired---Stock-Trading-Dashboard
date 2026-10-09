@@ -74,8 +74,7 @@ const Menu = () => {
 
       console.log("Logout response:", response.data);
 
-      window.location.href = window.location.href =
-        "https://zerodha-frontend-or4v.onrender.com/login";
+      window.location.href = "https://zerodha-frontend-or4v.onrender.com/login";
 
     } catch (error) {
 
