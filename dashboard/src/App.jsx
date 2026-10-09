@@ -17,7 +17,7 @@ function App() {
 
         
         await axios.get(
-          "http://localhost:5500/api/users/me",
+          "https://zerodha-backend-vq4p.onrender.com/api/users/me",
           {
             withCredentials: true
           }
