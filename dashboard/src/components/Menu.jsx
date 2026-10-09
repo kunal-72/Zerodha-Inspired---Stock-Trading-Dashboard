@@ -72,7 +72,7 @@ const Menu = () => {
       console.log("Logout response:", response.data);
 
       window.location.replace(
-        "https://zerodha-frontend-or4v.onrender.com/login"
+        "https://zerodha-frontend-or4v.onrender.com/signup"
       );
 
     } catch (error) {
