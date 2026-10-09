@@ -254,17 +254,20 @@ module.exports.getAllOrders = async (req, res) => {
 
 // logout
 module.exports.logout = async (req, res) => {
-
     res.clearCookie("token", {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax"
+        secure: true,
+        sameSite: "none"
     });
+
 
     return res.status(200).json({
         message: "Logout successfully"
     });
+
+
 };
+
 
 
 
