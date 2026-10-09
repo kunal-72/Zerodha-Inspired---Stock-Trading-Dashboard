@@ -3,11 +3,11 @@ import axios from "axios";
 
 const Summary = () => {
 
-  // Username store karne ke liye
+  
   const [username, setUsername] = useState("");
 
 
-  // Backend se username lene ke liye
+
   useEffect(() => {
 
     const getUser = async () => {
@@ -43,7 +43,6 @@ const Summary = () => {
 
       <div className="username">
 
-        {/* User ki jagah actual username */}
         <h6>Hi, {username}!</h6>
 
         <hr className="divider" />

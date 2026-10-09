@@ -6,10 +6,10 @@ const Menu = () => {
 
   const [selectedMenu, setSelectedMenu] = useState(0);
 
-  // Dropdown open/close
+  
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  // Username
+  
   const [username, setUsername] = useState("");
 
   const navigate = useNavigate();
@@ -20,13 +20,13 @@ const Menu = () => {
   };
 
 
-  // Avatar par click
+
   const handleProfileClick = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
 
-  // Backend se username lena
+  
   useEffect(() => {
 
     const getUser = async () => {
@@ -57,7 +57,7 @@ const Menu = () => {
   }, []);
 
 
-  // Logout function
+  
   const handleLogout = async () => {
 
     console.log("Logout clicked");

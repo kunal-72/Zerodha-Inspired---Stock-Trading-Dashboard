@@ -1,7 +1,7 @@
 import React from "react";
 import { useState , useEffect} from "react";
 
-// import { positions } from "../data/data";
+
 import axios from 'axios'
 
 const Positions = () => {
@@ -9,7 +9,7 @@ const Positions = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5500/allpositions").then((res) =>{
-      // console.log(res.data);
+      
       setAllPositions(res.data);
     })
   }, [])

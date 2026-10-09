@@ -11,15 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({});
 
-/*
-    axios.post(
-        "http://localhost:3000/api/users/login",                 agr create ka use nhi krte toh aise likhna pdhta
-        {
-            username: "kundan",
-            password: "1234"
-        }
-    );
-*/
+
 
 
 const client = axios.create({
@@ -30,8 +22,8 @@ const client = axios.create({
 
 export const AuthProvider = ({ children }) => {
 
-    const [userData, setuserData] = useState({})       //iska kaam logged-in user ki information ko store karna hai.
-    // Check karta hai ki user login hai ya nahi  
+    const [userData, setuserData] = useState({})       
+    
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const router = useNavigate();

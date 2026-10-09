@@ -12,7 +12,7 @@ export default function RightSection({ productName, productDescription, learnMor
                     
                 </div>
 
-                {/* <div className="col-1"></div> */}
+                
 
                 <div className="col-6">
                     <img src={imageURL} style={{width: "105%"}} alt="" />

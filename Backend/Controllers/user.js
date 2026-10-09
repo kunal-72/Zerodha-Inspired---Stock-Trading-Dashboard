@@ -33,34 +33,32 @@ module.exports.login = async (req, res) => {
         }
 
 
-        const token = jwt.sign(        // jwt.sign() ka kaam hai JWT banana.
+        const token = jwt.sign(      
 
-            // Ye JWT ka payload hai.
+            
             {
                 userId: user._id,
                 username: user.username
             },
 
-            // Backend is secret ko use karke JWT ko sign karta hai.  
             process.env.JWT_SECRET,
 
-            // Token kitne time tak valid rahega 
             { expiresIn: "1d" }
         );
 
 
-        res.cookie("token", token, {             // "token"   Cookie ka naam hai.
+        res.cookie("token", token, {             
 
-            // JavaScript directly cookie ko read nahi kar sakta 
+            
             httpOnly: true,
 
-            // Local development me false aur Production HTTPS website me: true
+            
             secure: false,
 
-            // CSRF protection ke liye 
+            
             sameSite: "lax",
 
-            // Cookie 1 day ke baad expire 
+        
             maxAge: 24 * 60 * 60 * 1000
         });
 
@@ -98,7 +96,7 @@ module.exports.register = async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        // console.log(email, username, hashedPassword);
+       
 
 
         const user = new User({
@@ -129,13 +127,13 @@ module.exports.me = async (req, res) => {
 
     try {
 
-        // const user = await User.findById(req.user.userId).select("-password");
+        
 
-        // 1. User ki ID nikalo
+       
         const userId = req.user.userId;
-        // 2. User ko database se find karo
+        
         const user = await User.findById(userId);
-        // 3. Password ko response se remove karo
+      
         user.password = undefined;
 
         if (!user) {
@@ -177,10 +175,10 @@ module.exports.newOrder = async (req, res) => {
         }
 
 
-        // Order create kar rahe hain
+    
         const order = new Order({
 
-            // JWT se current user ki ID milegi
+            
             userId: req.user.userId,
 
             name: name,
@@ -194,7 +192,7 @@ module.exports.newOrder = async (req, res) => {
         });
 
 
-        // MongoDB me save
+        
         await order.save();
 
 
@@ -227,7 +225,7 @@ module.exports.getAllOrders = async (req, res) => {
 
     try {
 
-        // Sirf logged-in user ke orders
+        
         const orders = await Order.find({
 
             userId: req.user.userId

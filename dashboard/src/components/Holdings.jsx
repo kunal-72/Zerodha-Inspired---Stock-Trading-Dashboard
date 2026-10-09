@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios, { all } from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 
-// import { holdings } from "../data/data";
+
 
 const Holdings = () => {
 
@@ -10,12 +10,12 @@ const Holdings = () => {
 
     useEffect(() => {
         axios.get("http://localhost:5500/allholdings").then((res) => {
-            //   console.log(res.data);
+           
             setAllHoldings(res.data);
         });
     }, []);
 
-    // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    
     const labels = allHoldings.map((subArray) => subArray["name"]);
 
     const data = {
@@ -29,21 +29,7 @@ const Holdings = () => {
         ],
     };
 
-    // export const data = {
-    //   labels,
-    //   datasets: [
-    // {
-    //   label: 'Dataset 1',
-    //   data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    //   backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    // },
-    //     {
-    //       label: 'Dataset 2',
-    //       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    //       backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    //     },
-    //   ],
-    // };
+  
 
     return (
         <>
@@ -73,7 +59,7 @@ const Holdings = () => {
                                 <tr key={index}>
                                     <td>{stock.name}</td>
                                     <td>{stock.qty}</td>
-                                    <td>{stock.avg.toFixed(2)}</td>    {/* toFixed(2) :- for 2 decimal place */}
+                                    <td>{stock.avg.toFixed(2)}</td>    
                                     <td>{stock.price.toFixed(2)}</td>
                                     <td>{curValue.toFixed(2)}</td>
                                     <td className={profClass}>

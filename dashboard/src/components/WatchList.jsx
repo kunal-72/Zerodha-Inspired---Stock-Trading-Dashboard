@@ -4,7 +4,7 @@ import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
 
-import { Tooltip, Grow } from "@mui/material";                  // on hover property chahiye in material ui se toh Tooltip ka use krte h 
+import { Tooltip, Grow } from "@mui/material";       
 
 import {
   BarChartOutlined,
@@ -46,33 +46,7 @@ const WatchList = () => {
     ],
   };
 
-  // export const data = {
-  //   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-  // datasets: [
-  //   {
-  //     label: "# of Votes",
-  //     data: [12, 19, 3, 5, 2, 3],
-  //     backgroundColor: [
-  //       "rgba(255, 99, 132, 0.2)",
-  //       "rgba(54, 162, 235, 0.2)",
-  //       "rgba(255, 206, 86, 0.2)",
-  //       "rgba(75, 192, 192, 0.2)",
-  //       "rgba(153, 102, 255, 0.2)",
-  //       "rgba(255, 159, 64, 0.2)",
-  //     ],
-  //     borderColor: [
-  //       "rgba(255, 99, 132, 1)",
-  //       "rgba(54, 162, 235, 1)",
-  //       "rgba(255, 206, 86, 1)",
-  //       "rgba(75, 192, 192, 1)",
-  //       "rgba(153, 102, 255, 1)",
-  //       "rgba(255, 159, 64, 1)",
-  //     ],
-  //     borderWidth: 1,
-  //   },
-  // ],
-  // };
-
+ 
   return (
     <div className="watchlist-container">
       <div className="search-container">
@@ -134,7 +108,7 @@ const WatchListActions = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
 
-  // BUY
+  
   const handleBuyClick = () => {
 
     generalContext.openOrderWindow(uid, "BUY");
@@ -142,7 +116,7 @@ const WatchListActions = ({ uid }) => {
   };
 
 
-  // SELL
+
   const handleSellClick = () => {
 
     generalContext.openOrderWindow(uid, "SELL");
@@ -156,7 +130,7 @@ const WatchListActions = ({ uid }) => {
 
       <span>
 
-        {/* BUY */}
+        
 
         <Tooltip
           title="Buy (B)"
@@ -175,7 +149,7 @@ const WatchListActions = ({ uid }) => {
         </Tooltip>
 
 
-        {/* SELL */}
+        
 
         <Tooltip
           title="Sell (S)"
@@ -194,7 +168,7 @@ const WatchListActions = ({ uid }) => {
         </Tooltip>
 
 
-        {/* Analytics */}
+        
 
         <Tooltip
           title="Analytics (A)"
@@ -212,7 +186,7 @@ const WatchListActions = ({ uid }) => {
         </Tooltip>
 
 
-        {/* More */}
+        
 
         <Tooltip
           title="More"

@@ -4,11 +4,11 @@ const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
 
-    // Cookie se token nikalo
+    
     const token = req.cookies.token;
 
 
-    // Token nahi mila
+
     if (!token) {
 
         return res.status(401).json({
@@ -20,19 +20,18 @@ const verifyToken = (req, res, next) => {
 
     try {
 
-        // JWT verify karo
+    
         const decoded = jwt.verify(
             token,
             process.env.JWT_SECRET
         );
 
 
-        // Decoded user information
-        // request ke andar store kar do
+        
         req.user = decoded;
 
 
-        // Next middleware/controller par jao
+        
         next();
 
 

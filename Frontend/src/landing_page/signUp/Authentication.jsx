@@ -41,7 +41,7 @@ export default function Signup() {
         setformState(0)
       }
     } catch (err) {
-      // console.log(err.response.data.message)
+      
       const errorMessage = err.response?.data?.message || "Something went wrong";
       seterror(errorMessage);
     }

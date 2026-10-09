@@ -15,8 +15,7 @@ function App() {
 
       try {
 
-        // Backend se check karenge
-        // ki user ke paas valid JWT cookie hai ya nahi
+        
         await axios.get(
           "http://localhost:5500/api/users/me",
           {
@@ -24,15 +23,13 @@ function App() {
           }
         );
 
-        // Agar request successful hai
-        // to user logged in hai
+        
         console.log("User is logged in");
         setCheckingLogin(false);
 
       } catch (error) {
 
-        // Agar JWT nahi hai ya invalid hai
-        // to main frontend ke signup page par bhej do
+      
         window.location.href = "http://localhost:5173/signup";
       }
     };
@@ -43,10 +40,7 @@ function App() {
 
 
 
-  // // Jab tak login check ho raha hai
-  // if (checkingLogin) {
-  //   return <h2>Checking login...</h2>;
-  // }
+  
 
 
   return (

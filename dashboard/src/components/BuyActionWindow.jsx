@@ -14,13 +14,10 @@ const BuyActionWindow = ({ uid, mode }) => {
   const [stockPrice, setStockPrice] = useState(0);
 
 
-  // Context se closeOrderWindow nikal rahe hain
   const generalContext = useContext(GeneralContext);
 
 
-  // ========================================
-  // PLACE ORDER
-  // ========================================
+
 
   const handleOrderClick = async () => {
 
@@ -41,7 +38,7 @@ const BuyActionWindow = ({ uid, mode }) => {
         },
 
         {
-          // JWT cookie backend ko send hogi
+          
           withCredentials: true
         }
 
@@ -53,7 +50,7 @@ const BuyActionWindow = ({ uid, mode }) => {
       alert(`${mode} order placed successfully`);
 
 
-      // Order successful hone ke baad window close
+
       generalContext.closeOrderWindow();
 
 
@@ -71,9 +68,7 @@ const BuyActionWindow = ({ uid, mode }) => {
   };
 
 
-  // ========================================
-  // CANCEL
-  // ========================================
+  
 
   const handleCancelClick = () => {
 
@@ -99,7 +94,7 @@ const BuyActionWindow = ({ uid, mode }) => {
 
         <div className="inputs">
 
-          {/* Quantity */}
+         
 
           <fieldset>
 
@@ -122,7 +117,7 @@ const BuyActionWindow = ({ uid, mode }) => {
           </fieldset>
 
 
-          {/* Price */}
+          
 
           <fieldset>
 

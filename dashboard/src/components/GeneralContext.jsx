@@ -20,7 +20,7 @@ export const GeneralContextProvider = (props) => {
   const [orderMode, setOrderMode] = useState("BUY");
 
 
-  // Order window open
+
   const handleOpenOrderWindow = (uid, mode) => {
 
     setIsOrderWindowOpen(true);
@@ -32,7 +32,7 @@ export const GeneralContextProvider = (props) => {
   };
 
 
-  // Order window close
+ 
   const handleCloseOrderWindow = () => {
 
     setIsOrderWindowOpen(false);
