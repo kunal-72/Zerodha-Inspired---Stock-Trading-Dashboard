@@ -58,12 +58,9 @@ const Menu = () => {
 
 
 
+
   const handleLogout = async () => {
-
-    console.log("Logout clicked");
-
     try {
-
       const response = await axios.post(
         "https://zerodha-backend-vq4p.onrender.com/api/users/logout",
         {},
@@ -74,14 +71,19 @@ const Menu = () => {
 
       console.log("Logout response:", response.data);
 
-      window.location.href = "https://zerodha-frontend-or4v.onrender.com/login";
+      window.location.replace(
+        "https://zerodha-frontend-or4v.onrender.com/login"
+      );
 
     } catch (error) {
-
-      console.log("Logout error:", error);
-
+      console.log(
+        "Logout error:",
+        error.response?.data || error.message
+      );
     }
   };
+
+
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
