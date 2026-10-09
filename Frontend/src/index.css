@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#supportHero {
+  background-color: rgba(0, 0, 255, 0.651);
+  color: white;
+}
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 100px;
+}
+
+#supportHero a {
+  color: white;
+  margin-left: 10px;
+}
+
+#supportHero input{
+  width: 100%;
+  padding: 20px 50px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+ol li{
+  line-height: 2;
+}
+
+.navbar-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

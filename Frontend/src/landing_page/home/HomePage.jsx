@@ -1,0 +1,22 @@
+import Hero from "./Hero.jsx"
+import Award from "./Award.jsx"
+import Stats from './Stats.jsx'
+import Pricing from './Pricing.jsx'
+import Education from './Education.jsx'
+import OpenAccount from '../OpenAccount.jsx'
+
+
+export default function HomePage() {
+    return (
+        <div>
+            
+            <Hero />
+            <Award />
+            <Stats />
+            <Pricing />
+            <Education />
+            <OpenAccount />
+            
+        </div>
+    )
+}

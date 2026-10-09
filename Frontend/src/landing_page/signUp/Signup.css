@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    /* border: 1px solid red; */
+}
+.form input{
+    width: 20vw;
+}
+
+.auth{
+    margin-top: 10px;
+}
+

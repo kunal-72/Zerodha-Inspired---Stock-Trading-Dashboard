@@ -1,0 +1,33 @@
+.footer-link  {
+  
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.footer-link a{
+  text-decoration: none;
+  color: rgb(114, 114, 114);
+  font-weight: 450;
+  font-size: 0.95rem;
+}
+
+.footer-link a:hover{
+  color: rgb(76, 76, 236);
+}
+
+.footer-nav{
+  display: flex;
+  justify-content: space-between;
+
+}
+.footer-nav > li{
+  list-style: none;
+  color: rgb(114, 114, 114);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.footer-nav > li:hover{
+  color: rgb(76, 76, 236);
+  cursor: pointer;
+}
