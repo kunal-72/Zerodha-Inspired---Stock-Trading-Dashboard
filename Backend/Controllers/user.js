@@ -33,9 +33,9 @@ module.exports.login = async (req, res) => {
         }
 
 
-        const token = jwt.sign(      
+        const token = jwt.sign(
 
-            
+
             {
                 userId: user._id,
                 username: user.username
@@ -47,20 +47,13 @@ module.exports.login = async (req, res) => {
         );
 
 
-        res.cookie("token", token, {             
-
-            
+        res.cookie("token", token, {
             httpOnly: true,
-
-            
-            secure: false,
-
-            
-            sameSite: "lax",
-
-        
+            secure: true,
+            sameSite: "none",
             maxAge: 24 * 60 * 60 * 1000
         });
+
 
         return res.status(status.OK).json({ message: "Login successfully" })
 
@@ -96,7 +89,7 @@ module.exports.register = async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-       
+
 
 
         const user = new User({
@@ -127,13 +120,13 @@ module.exports.me = async (req, res) => {
 
     try {
 
-        
 
-       
+
+
         const userId = req.user.userId;
-        
+
         const user = await User.findById(userId);
-      
+
         user.password = undefined;
 
         if (!user) {
@@ -175,10 +168,10 @@ module.exports.newOrder = async (req, res) => {
         }
 
 
-    
+
         const order = new Order({
 
-            
+
             userId: req.user.userId,
 
             name: name,
@@ -192,7 +185,7 @@ module.exports.newOrder = async (req, res) => {
         });
 
 
-        
+
         await order.save();
 
 
@@ -225,7 +218,7 @@ module.exports.getAllOrders = async (req, res) => {
 
     try {
 
-        
+
         const orders = await Order.find({
 
             userId: req.user.userId
