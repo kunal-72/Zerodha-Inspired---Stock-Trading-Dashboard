@@ -6,10 +6,10 @@ const Menu = () => {
 
   const [selectedMenu, setSelectedMenu] = useState(0);
 
-  
+
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  
+
   const [username, setUsername] = useState("");
 
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const Menu = () => {
   };
 
 
-  
+
   useEffect(() => {
 
     const getUser = async () => {
@@ -34,7 +34,7 @@ const Menu = () => {
       try {
 
         const response = await axios.get(
-          "http://localhost:5500/api/users/me",
+          "https://zerodha-backend-vq4p.onrender.com/api/users/me",
           {
             withCredentials: true
           }
@@ -57,7 +57,7 @@ const Menu = () => {
   }, []);
 
 
-  
+
   const handleLogout = async () => {
 
     console.log("Logout clicked");
@@ -65,7 +65,7 @@ const Menu = () => {
     try {
 
       const response = await axios.post(
-        "http://localhost:5500/api/users/logout",
+        "https://zerodha-backend-vq4p.onrender.com/api/users/logout",
         {},
         {
           withCredentials: true
@@ -74,7 +74,8 @@ const Menu = () => {
 
       console.log("Logout response:", response.data);
 
-      window.location.href = "http://localhost:5174/login";
+      window.location.href = window.location.href =
+        "https://zerodha-frontend-or4v.onrender.com/login";
 
     } catch (error) {
 

@@ -19,56 +19,41 @@ const BuyActionWindow = ({ uid, mode }) => {
 
 
 
+
   const handleOrderClick = async () => {
-
     try {
-
       const response = await axios.post(
-
-        "http://localhost:5500/newOrder",
-
+        "https://zerodha-backend-vq4p.onrender.com/newOrder",
         {
           name: uid,
-
-          qty: stockQuantity,
-
-          price: stockPrice,
-
+          qty: Number(stockQuantity),
+          price: Number(stockPrice),
           mode: mode
         },
-
         {
-          
           withCredentials: true
         }
-
       );
-
 
       console.log(response.data);
 
       alert(`${mode} order placed successfully`);
 
-
-
       generalContext.closeOrderWindow();
-
-
     } catch (error) {
-
-      console.log(error);
+      console.log("Order error:", error);
 
       alert(
         error.response?.data?.message ||
         "Something went wrong"
       );
-
     }
-
   };
 
 
-  
+
+
+
 
   const handleCancelClick = () => {
 
@@ -94,7 +79,7 @@ const BuyActionWindow = ({ uid, mode }) => {
 
         <div className="inputs">
 
-         
+
 
           <fieldset>
 
@@ -117,7 +102,7 @@ const BuyActionWindow = ({ uid, mode }) => {
           </fieldset>
 
 
-          
+
 
           <fieldset>
 

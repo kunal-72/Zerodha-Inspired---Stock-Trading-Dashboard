@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
+import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 
 
@@ -9,13 +9,17 @@ const Holdings = () => {
     const [allHoldings, setAllHoldings] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5500/allholdings").then((res) => {
-           
-            setAllHoldings(res.data);
-        });
+        axios
+            .get("https://zerodha-backend-vq4p.onrender.com/allholdings")
+            .then((res) => {
+                setAllHoldings(res.data);
+            })
+            .catch((error) => {
+                console.log("Holdings fetch error:", error);
+            });
     }, []);
 
-    
+
     const labels = allHoldings.map((subArray) => subArray["name"]);
 
     const data = {
@@ -29,7 +33,7 @@ const Holdings = () => {
         ],
     };
 
-  
+
 
     return (
         <>
@@ -59,7 +63,7 @@ const Holdings = () => {
                                 <tr key={index}>
                                     <td>{stock.name}</td>
                                     <td>{stock.qty}</td>
-                                    <td>{stock.avg.toFixed(2)}</td>    
+                                    <td>{stock.avg.toFixed(2)}</td>
                                     <td>{stock.price.toFixed(2)}</td>
                                     <td>{curValue.toFixed(2)}</td>
                                     <td className={profClass}>

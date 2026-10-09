@@ -12,47 +12,34 @@ const Orders = () => {
   const [loading, setLoading] = useState(true);
 
 
- 
+
+
 
   useEffect(() => {
-
     const fetchOrders = async () => {
-
       try {
-
         const response = await axios.get(
-
-          "http://localhost:5500/allorders",
-
+          "https://zerodha-backend-vq4p.onrender.com/allorders",
           {
             withCredentials: true
           }
-
         );
 
-
         setOrders(response.data.orders);
-
-
       } catch (error) {
-
-        console.log(error);
-
+        console.log("Orders fetch error:", error);
       } finally {
-
         setLoading(false);
-
       }
-
     };
 
-
     fetchOrders();
-
   }, []);
 
 
-  
+
+
+
 
   if (loading) {
 
@@ -100,7 +87,7 @@ const Orders = () => {
   }
 
 
-  
+
 
   return (
 
