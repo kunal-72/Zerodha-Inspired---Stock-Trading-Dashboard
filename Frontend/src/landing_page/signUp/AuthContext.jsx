@@ -15,7 +15,7 @@ export const AuthContext = createContext({});
 
 
 const client = axios.create({
-    baseURL: "http://zerodha-backend-vq4p.onrender.com/api/users/",
+    baseURL: "https://zerodha-backend-vq4p.onrender.com/api/users/",
     withCredentials: true
 });
 
