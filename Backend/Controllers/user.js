@@ -127,16 +127,16 @@ module.exports.me = async (req, res) => {
 
         const user = await User.findById(userId);
 
-        user.password = undefined;
-
+        
         if (!user) {
-
+            
             return res.status(status.NOT_FOUND).json({
                 message: "User not found"
             });
-
+            
         }
-
+        user.password = undefined;
+        
         return res.status(status.OK).json({
             user: user
         });
