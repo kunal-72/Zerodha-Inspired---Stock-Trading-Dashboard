@@ -121,7 +121,7 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={data}>
 
-            {/* Child components */}
+           
             {children}
 
         </AuthContext.Provider>

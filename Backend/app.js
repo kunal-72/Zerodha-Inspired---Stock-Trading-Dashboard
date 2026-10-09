@@ -39,9 +39,10 @@ app.use(express.json());
 // Frontend 5173 aur Dashboard 5174  ko backend ke saath connect karne ke liye
 app.use(cors({
   origin: [
+    "https://zerodha-frontend-or4v.onrender.com",
+    "https://zerodha-dashboard-9wg2.onrender.com",
     "http://localhost:5173",
-    "http://localhost:5174",
-    "https://zerodha-frontend-or4v.onrender.com"
+    "http://localhost:5174"
   ],
   credentials: true
 }));
