@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "v20.19.5"
+  },
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
