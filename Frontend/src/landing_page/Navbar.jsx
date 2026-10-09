@@ -35,7 +35,7 @@ export default function Navbar() {
                             <li className="nav-item mx-2">
                                 <a
                                     className="nav-link"
-                                    href="http://localhost:5174"
+                                    href="https://zerodha-dashboard-9wg2.onrender.com"
                                 >
                                     Dashboard
                                 </a>
