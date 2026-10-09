@@ -23,7 +23,7 @@ function App() {
         console.log("User is logged in");
       } catch (error) {
         window.location.href =
-          "https://zerodha-frontend-or4v.onrender.com/signup";
+          "https://zerodha-frontend-or4v.onrender.com/login";
       } finally {
         setCheckingLogin(false);
       }
