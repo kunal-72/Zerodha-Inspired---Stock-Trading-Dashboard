@@ -10,12 +10,8 @@ function App() {
   const [checkingLogin, setCheckingLogin] = useState(true);
 
   useEffect(() => {
-
     const checkLogin = async () => {
-
       try {
-
-        
         await axios.get(
           "https://zerodha-backend-vq4p.onrender.com/api/users/me",
           {
@@ -23,42 +19,40 @@ function App() {
           }
         );
 
-        
+
         console.log("User is logged in");
-        setCheckingLogin(false);
-
       } catch (error) {
-
-      
-        window.location.href = "http://localhost:5173/signup";
+        window.location.href =
+          "https://zerodha-frontend-or4v.onrender.com/signup";
+      } finally {
+        setCheckingLogin(false);
       }
     };
 
     checkLogin();
-
   }, []);
 
 
 
-  
+
 
 
   return (
     <>
       <GeneralContextProvider>
-      <BrowserRouter>
+        <BrowserRouter>
 
-        <Routes>
+          <Routes>
 
-          <Route
-            path='/*'
-            element={<Home />}
-          />
+            <Route
+              path='/*'
+              element={<Home />}
+            />
 
-        </Routes>
+          </Routes>
 
-      </BrowserRouter>
-    </GeneralContextProvider >
+        </BrowserRouter>
+      </GeneralContextProvider >
     </>
   )
 }
